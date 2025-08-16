@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -59,5 +63,9 @@
     # Other
     bemoji
     nix-prefetch-scripts
+
+    #flakes
+    #    inputs.mika.packages.${pkgs.system}.default
+    inputs.dc-tech.packages.${pkgs.system}.default
   ];
 }
