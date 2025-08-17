@@ -11,11 +11,11 @@
     ./local-packages.nix
     ../../nixos/modules
   ];
-  fileSystems."/home" = {
-    device = "dev/disk/by-label/X";
-    fsType = "ext4";
-    options = [ "default" ];
-  };
+  # fileSystems."/mnt/X" = {
+  #device = "/dev/disk/by-label/X";
+  # fsType = "ext4";
+  # options = [ "default" ];
+  # };
 
   environment.systemPackages = [ pkgs.home-manager ];
 
